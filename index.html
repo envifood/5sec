@@ -591,7 +591,6 @@ const SHOW_SLUGS = {
 };
 const SLUG_TO_SHOW = Object.fromEntries(Object.entries(SHOW_SLUGS).map(([show, slug]) => [slug, show]));
 
-// Хронологическая шкала показов (без «Все показы») — по ней двигается ползунок на странице «Фильмы»
 const SHOW_TIMELINE = SHOWS.slice(1);
 const SHOW_INDEX = Object.fromEntries(SHOW_TIMELINE.map((show, i) => [show, i]));
 
@@ -600,7 +599,7 @@ const FILMS = [
 
   { id:"2019-bfm-2", title:"Упс", author:"Катя Милославская" },
 
-  { id:"2019-bfm-3", title:"Жесть", author:"Саша Деева" },
+  { id:"2019-bfm-3", title:"Жесть", author:"Саша Деева", videoId:"utXJY2P9Lm7Zn4p2DcPV5s" },
 
   { id:"2019-bfm-4", title:"Шутка", author:"Цита Волина" },
 
@@ -660,7 +659,7 @@ const FILMS = [
 
   { id:"2019-bfm-32", title:"Со", author:"Настя Жакулина" },
 
-  { id:"2019-bfm-33", title:"Жил", author:"Саша Криволуцкая" },
+  { id:"2019-bfm-33", title:"Жил", author:"Саша Криволуцкая", videoId:"oygGLjMyvPkoqLpZH7AiH8" },
 
   { id:"2019-bfm-34", title:"Без названия", author:"Мария Фелицына" },
 
@@ -692,7 +691,7 @@ const FILMS = [
 
   { id:"2019-bfm-48", title:"Без названия", author:"София Богданова" },
 
-  { id:"2019-bfm-49", title:"Поцелуи", author:"Ольга Молоток" },
+  { id:"2019-bfm-49", title:"Поцелуи", author:"Ольга Молоток", videoId:"uQFM8ey6hj3v2mda4Qqite" },
 
   { id:"2019-bfm-50", title:"Без названия", author:"Валентина Архипова" },
 
@@ -718,7 +717,7 @@ const FILMS = [
 
   { id:"2019-bfm-61", title:"Опус 1", author:"Наталья Волкова" },
 
-  { id:"2019-bfm-62", title:"Интроверты идут гулять", author:"Макс Куликов" },
+  { id:"2019-bfm-62", title:"Интроверты идут гулять", author:"Макс Куликов", videoId:"3gfZpLkYhqyAVD4nxTBKXq" },
 
   { id:"2019-bfm-63", title:"Свет (Light)", author:"Мария Майорова" },
 
@@ -728,7 +727,7 @@ const FILMS = [
 
   { id:"2019-bfm-66", title:"Jump", author:"Марина Касторнова" },
 
-  { id:"2019-bfm-67", title:"Мам", author:"Саша Деева" },
+  { id:"2019-bfm-67", title:"Мам", author:"Саша Деева", videoId:"7YzUqN8xm2QnaXxeMLvdkB" },
 
   { id:"2019-bfm-68", title:"Чувак и я", author:"Jelena Oroz" },
 
@@ -754,7 +753,7 @@ const FILMS = [
 
   { id:"2019-bfm-79", title:"Без названия", author:"Юлия Белавина" },
 
-  { id:"2019-bfm-80", title:"Ночной разговор", author:"Дуся Геллер" },
+  { id:"2019-bfm-80", title:"Ночной разговор", author:"Дуся Геллер", videoId:"isXGdyxRPUmpDJwvQSL48d" },
 
   { id:"2019-bfm-81", title:"Без названия", author:"Диана Гордеева" },
 
@@ -840,11 +839,11 @@ const FILMS = [
 
   { id:"2019-bfm-122", title:"5 секунд до моря", author:"Саша Свирский" },
 
-  { id:"2019-bfm-123", title:"Мой дед", author:"Анна Канаичева" },
+  { id:"2019-bfm-123", title:"Мой дед", author:"Анна Канаичева", videoId:"v2rca9Pxvkb9FKybHoAKKt" },
 
   { id:"2019-bfm-124", title:"Супермашина", author:"Дэвид Келлнер" },
 
-  { id:"2019-bfm-125", title:"Без названия", author:"Федя Богуславский" },
+  { id:"2019-bfm-125", title:"Без названия", author:"Федя Богуславский", videoId:"uNv6uZKN3qtGPAfUpqxnuL" },
 
   { id:"2019-bfm-126", title:"Без названия", author:"Иван Бондаренко" },
 
@@ -884,7 +883,7 @@ const FILMS = [
 
   { id:"2020-suzdal-1", title:"Фантом", author:"Наталья Рысс" },
 
-  { id:"2020-suzdal-2", title:"Одноклассники", author:"Полина Кузина" },
+  { id:"2020-suzdal-2", title:"Одноклассники", author:"Полина Кузина", videoId:"q1jjNQWSnbfGrio3HA8HZA" },
 
   { id:"2020-suzdal-3", title:"Страшнее кошки зверя нет", author:"Катерина Жукова" },
 
@@ -946,7 +945,7 @@ const FILMS = [
 
   { id:"2020-suzdal-32", title:"Внезапный... Февраль", author:"Наталья Рысс" },
 
-  { id:"2020-suzdal-33", title:"Звездная ночь", author:"Кристина Янчицкая" },
+  { id:"2020-suzdal-33", title:"Звездная ночь", author:"Кристина Янчицкая", videoId:"oYX7mXecPCLFLXbZQmJTNN" },
 
   { id:"2020-suzdal-34", title:"Буль-буль", author:"Марина Иванова" },
 
@@ -964,13 +963,13 @@ const FILMS = [
 
   { id:"2020-suzdal-41", title:"Два мира", author:"Павел Суслов" },
 
-  { id:"2020-suzdal-42", title:"Прозренье", author:"Лена Фирсова" },
+  { id:"2020-suzdal-42", title:"Прозренье", author:"Лена Фирсова", videoId:"jAPb4T3ekW1rsh4eBL9gyS" },
 
   { id:"2020-suzdal-43", title:"Волосы", author:"Елизавета Сперанская" },
 
   { id:"2020-suzdal-44", title:"Парковка", author:"Кирилл Толстов" },
 
-  { id:"2020-suzdal-45", title:"Инкогнито", author:"Лена Фирсова" },
+  { id:"2020-suzdal-45", title:"Инкогнито", author:"Лена Фирсова", videoId:"n8ABwbBW3WjkZ8bu6UeP1r" },
 
   { id:"2020-suzdal-46", title:"Завтрак", author:"Наталья Рыжова" },
 
@@ -1008,7 +1007,7 @@ const FILMS = [
 
   { id:"2020-suzdal-63", title:"Счетовод", author:"Оксана Броневицкая" },
 
-  { id:"2020-suzdal-64", title:"Кузьма и Пётр", author:"Женя Фадеев" },
+  { id:"2020-suzdal-64", title:"Кузьма и Пётр", author:"Женя Фадеев", videoId:"6XmqNLnTjFSaGpYMTgH6pb" },
 
   { id:"2020-suzdal-65", title:"дереВО", author:"Ганах Катя" },
 
@@ -1098,7 +1097,7 @@ const FILMS = [
 
   { id:"2020-suzdal-108", title:"Динозовер", author:"Дарья Чурсина" },
 
-  { id:"2020-suzdal-109", title:"Аэробика и пропеллер", author:"Юлия Франке" },
+  { id:"2020-suzdal-109", title:"Аэробика и пропеллер", author:"Юлия Франке", videoId:"p5SFsYWAxuuL6YxoBYNbyt" },
 
   { id:"2020-suzdal-110", title:"Ой-2", author:"Наташа Данилевская" },
 
@@ -1110,7 +1109,7 @@ const FILMS = [
 
   { id:"2020-suzdal-114", title:"Книга", author:"Ольга Гаврилова" },
 
-  { id:"2020-suzdal-115", title:"Весна", author:"Дашка Дементьева" },
+  { id:"2020-suzdal-115", title:"Весна", author:"Дашка Дементьева", videoId:"iusGnqbQ29xXdQqEm7Rioa" },
 
   { id:"2020-suzdal-116", title:"Тепло и сыро", author:"Дуся Геллер" },
 
@@ -1128,7 +1127,7 @@ const FILMS = [
 
   { id:"2020-suzdal-123", title:"Как я работаю", author:"Даша Смородина" },
 
-  { id:"2020-suzdal-124", title:"Черное Яйцо", author:"Боброва Анастасия" },
+  { id:"2020-suzdal-124", title:"Черное Яйцо", author:"Боброва Анастасия", videoId:"4Kq2xTpCiGrCDTLiYwqTaj" },
 
   { id:"2020-suzdal-125", title:"АаААа!", author:"Светлана" },
 
@@ -1164,7 +1163,7 @@ const FILMS = [
 
   { id:"2020-suzdal-141", title:"Пельмени", author:"Ульяна Холод" },
 
-  { id:"2020-suzdal-142", title:"Не мой флешбек", author:"Алексей Просвирнин" },
+  { id:"2020-suzdal-142", title:"Не мой флешбек", author:"Алексей Просвирнин", videoId:"xdevowohVXN2HBU69HbDyQ" },
 
   { id:"2020-suzdal-143", title:"В облака", author:"Алина" },
 
@@ -1200,19 +1199,19 @@ const FILMS = [
 
   { id:"2020-online-11", title:"Ныряльщица", author:"Илья Ченцов" },
 
-  { id:"2020-online-12", title:"Изоляция", author:"Антон Иванов" },
+  { id:"2020-online-12", title:"Изоляция", author:"Антон Иванов", videoId:"857HiYzftUbBs6oEMbk2E6" },
 
   { id:"2020-online-13", title:"Моя домашняя тренировка", author:"Екатерина Куричева" },
 
-  { id:"2020-online-14", title:"Мнительная история", author:"Варвара Стрелкова" },
+  { id:"2020-online-14", title:"Мнительная история", author:"Варвара Стрелкова", videoId:"2AZ6m2WEykJooAWL1SBQfJ" },
 
   { id:"2020-online-15", title:"Я не...1", author:"Юдин Фёдор" },
 
   { id:"2020-online-16", title:"Память Осени", author:"Агуреева Анастасия (Аса Ульврун)" },
 
-  { id:"2020-online-17", title:"46", author:"Ирина Эльшанская" },
+  { id:"2020-online-17", title:"46", author:"Ирина Эльшанская", videoId:"xdevowohVXN2HBU69HbDyQ" },
 
-  { id:"2020-online-18", title:"Бритва", author:"БОШИ (Алёна Макарова)" },
+  { id:"2020-online-18", title:"Бритва", author:"БОШИ (Алёна Макарова)", videoId:"x1oZ1BWZs83qWSLynXiZrw" },
 
   { id:"2020-online-19", title:"Путешествия", author:"Скрипникова Наталья" },
 
@@ -1222,7 +1221,7 @@ const FILMS = [
 
   { id:"2020-online-22", title:"Убийство на пляже", author:"Настя Мельниченко" },
 
-  { id:"2020-online-23", title:"Виси", author:"Дашка Дементьева" },
+  { id:"2020-online-23", title:"Виси", author:"Дашка Дементьева", videoId:"bToQk1njZXALttzkkqFJn5" },
 
   { id:"2020-online-24", title:"огород", author:"лёля брестовицкая" },
 
@@ -1236,7 +1235,7 @@ const FILMS = [
 
   { id:"2020-online-29", title:"Псхотераптица. Эпизод: Сова", author:"Анна Будишевская" },
 
-  { id:"2020-online-30", title:"А", author:"Maria Savenkova" },
+  { id:"2020-online-30", title:"А", author:"Maria Savenkova", videoId:"xg4NNqsXgeZcD66po57Kjc" },
 
   { id:"2020-online-31", title:"ВИНОДЕЛ", author:"Максимова Александра" },
 
@@ -1244,13 +1243,13 @@ const FILMS = [
 
   { id:"2020-online-33", title:"Голубка", author:"Vartanyan" },
 
-  { id:"2020-online-34", title:"Морской монстр", author:"Антон Иванов" },
+  { id:"2020-online-34", title:"Морской монстр", author:"Антон Иванов", videoId:"i1F2ratGpTUtCHMfUkYLms" },
 
-  { id:"2020-online-35", title:"Техно-Викингмент", author:"Бахурин Андрей" },
+  { id:"2020-online-35", title:"Техно-Викингмент", author:"Бахурин Андрей", videoId:"ptasUMAEbHQXqQY6G8oUvN" },
 
   { id:"2020-online-36", title:"Опоздал", author:"Александр Бубнов" },
 
-  { id:"2020-online-37", title:"Дистанционка", author:"BOSHI (Alyona Makarova)" },
+  { id:"2020-online-37", title:"Дистанционка", author:"BOSHI (Alyona Makarova)", videoId:"b5zJupLaDxJ6WHe74dgCCE" },
 
   { id:"2020-online-38", title:"Eстественный свет", author:"Александра Слепчук" },
 
@@ -1272,15 +1271,15 @@ const FILMS = [
 
   { id:"2020-online-47", title:"Длинношеее", author:"Илья Ченцов" },
 
-  { id:"2020-online-48", title:"Желудек | Оставайся дома!", author:"Антон Иванов" },
+  { id:"2020-online-48", title:"Желудек | Оставайся дома!", author:"Антон Иванов", videoId:"4eTtNerVxfKnE88S4HucQ2" },
 
-  { id:"2020-online-49", title:"Отпусти брови на волю", author:"Кузина Полина" },
+  { id:"2020-online-49", title:"Отпусти брови на волю", author:"Кузина Полина", videoId:"14mthN7G6tJYgZzVn12KEH" },
 
   { id:"2020-online-50", title:"А", author:"кирилл чёрт" },
 
-  { id:"2020-online-51", title:"Трубач | Оставайся дома!", author:"Антон Иванов" },
+  { id:"2020-online-51", title:"Трубач | Оставайся дома!", author:"Антон Иванов", videoId:"n585hWzvGid1cxfWGnVNst" },
 
-  { id:"2020-online-52", title:"Желудь и Крот", author:"Антон Иванов" },
+  { id:"2020-online-52", title:"Желудь и Крот", author:"Антон Иванов", videoId:"tLzRismGQwZ3sNNjj5cTC4" },
 
   { id:"2020-online-53", title:"титаник", author:"маша семина, лисса смирнова, соня шмуренкова, настя сорокина, саша моисеева, василиса коробова" },
 
@@ -1304,7 +1303,7 @@ const FILMS = [
 
   { id:"2020-online-63", title:"блин", author:"Наташа Воротникова" },
 
-  { id:"2020-online-64", title:"Купание красного коня", author:"Кристина Янчицкая" },
+  { id:"2020-online-64", title:"Купание красного коня", author:"Кристина Янчицкая", videoId:"g5Ydq3h3FUnp73ckbpQSQZ" },
 
   { id:"2020-online-65", title:"AAAAA", author:"кирилл чёрт" },
 
@@ -1322,7 +1321,7 @@ const FILMS = [
 
   { id:"2020-online-72", title:"AAA!", author:"Gapls" },
 
-  { id:"2020-online-73", title:"Маска", author:"Клим Николаев" },
+  { id:"2020-online-73", title:"Маска", author:"Клим Николаев", videoId:"gF2VazpTRm53ActaR3R3mt" },
 
   { id:"2020-online-74", title:"Я не...2", author:"Юдин Фёдор" },
 
@@ -1344,7 +1343,7 @@ const FILMS = [
 
   { id:"2020-online-83", title:"Не смышно", author:"Валерий Бадалов" },
 
-  { id:"2020-online-84", title:"Чайка", author:"Рязанова Анастасия" },
+  { id:"2020-online-84", title:"Чайка", author:"Рязанова Анастасия", videoId:"nJpqoL5m2goJjwczetPNVr" },
 
   { id:"2020-online-85", title:"Без названия", author:"Настя Гриб" },
 
@@ -1384,7 +1383,7 @@ const FILMS = [
 
   { id:"2020-online-103", title:"Рука победы", author:"Артем" },
 
-  { id:"2020-online-104", title:"Миль Попс", author:"Клим Николаев" },
+  { id:"2020-online-104", title:"Миль Попс", author:"Клим Николаев", videoId:"8qtiAhrvNhPVKwiazHHReB" },
 
   { id:"2020-online-105", title:"ванна", author:"черешенка" },
 
@@ -1468,7 +1467,7 @@ const FILMS = [
 
   { id:"2020-online-145", title:"Хлопок", author:"Кирилл Воронцов" },
 
-  { id:"2020-online-146", title:"Мои брови на карантине", author:"Гутален" },
+  { id:"2020-online-146", title:"Мои брови на карантине", author:"Гутален", videoId:"5ALt4QZLbHbuZoxAbpXJFx" },
 
   { id:"2020-online-147", title:"spit it out", author:"Klimenko Nadezhda" },
 
@@ -1514,7 +1513,7 @@ const FILMS = [
 
   { id:"2020-bfm-3", title:"Очень простой фокус 1", author:"Алексей Просвирнин" },
 
-  { id:"2020-bfm-4", title:"#ОставайтесьДома", author:"Энчи Шиленкова" },
+  { id:"2020-bfm-4", title:"#ОставайтесьДома", author:"Энчи Шиленкова", videoId:"9ziVvrVryjNtjtHtUa7Mca" },
 
   { id:"2020-bfm-5", title:"Мячики тусовщики", author:"Маргарита Четырина" },
 
@@ -1528,7 +1527,7 @@ const FILMS = [
 
   { id:"2020-bfm-10", title:"Лесть", author:"Ульяна Корчукова" },
 
-  { id:"2020-bfm-11", title:"Зеркало заднего вида", author:"Клим Николаев" },
+  { id:"2020-bfm-11", title:"Зеркало заднего вида", author:"Клим Николаев", videoId:"bDNB3aFdmnFr28kdU552QT" },
 
   { id:"2020-bfm-12", title:"Привет", author:"Оксана Броневицкая" },
 
@@ -1562,7 +1561,7 @@ const FILMS = [
 
   { id:"2020-bfm-27", title:"Последний день на Титанике", author:"Кузина Полина" },
 
-  { id:"2020-bfm-28", title:"Форма жизни", author:"Павел Суслов" },
+  { id:"2020-bfm-28", title:"Форма жизни", author:"Павел Суслов", videoId:"baNkwskwegXLmBmW1XxiZG" },
 
   { id:"2020-bfm-29", title:"Бывает", author:"Поля Шуст" },
 
@@ -1570,7 +1569,7 @@ const FILMS = [
 
   { id:"2020-bfm-31", title:"Надевайте перчатки для защиты от вируса", author:"Анна Кичигина" },
 
-  { id:"2020-bfm-32", title:"Секретик", author:"Энчи Шиленкова" },
+  { id:"2020-bfm-32", title:"Секретик", author:"Энчи Шиленкова", videoId:"9Ebnn7Fb1REjqQUnRqFdHq" },
 
   { id:"2020-bfm-33", title:"Кайфнутий тигр", author:"Эвридика Папаякову" },
 
@@ -1590,11 +1589,11 @@ const FILMS = [
 
   { id:"2020-bfm-41", title:"Мудрецы", author:"Алиса Павлова Ра" },
 
-  { id:"2020-bfm-42", title:"Скоро новый год...", author:"Алиса Павлова Ра" },
+  { id:"2020-bfm-42", title:"Скоро новый год...", author:"Алиса Павлова Ра", videoId:"4W7m2Z1nuXFfp7mk6hbFUR" },
 
   { id:"2020-bfm-43", title:"#ДавайДосвидания", author:"Татьяна Вохменцева" },
 
-  { id:"2020-bfm-44", title:"Блинарий", author:"Маша Семина" },
+  { id:"2020-bfm-44", title:"Блинарий", author:"Маша Семина", videoId:"x9J6jTTSxbr4DD7AgnBjS2" },
 
   { id:"2020-bfm-45", title:"Эффект печеньки", author:"Карташова Мария" },
 
@@ -1614,7 +1613,7 @@ const FILMS = [
 
   { id:"2020-bfm-53", title:"Овца Sheep", author:"Elizaveta Tikhonova" },
 
-  { id:"2020-bfm-54", title:"Рыба Fish", author:"Anton Ivanov" },
+  { id:"2020-bfm-54", title:"Рыба Fish", author:"Anton Ivanov", videoId:"gKw3W7a65Fgx3PDXsS5utt" },
 
   { id:"2020-bfm-55", title:"Растаяла", author:"Жанна Совина" },
 
@@ -1622,11 +1621,11 @@ const FILMS = [
 
   { id:"2020-bfm-57", title:"Мама говорила", author:"Поля Шуст" },
 
-  { id:"2020-bfm-58", title:"Пятcашки", author:"Саша Воробьёва" },
+  { id:"2020-bfm-58", title:"Пятcашки", author:"Саша Воробьёва", videoId:"s4CKmjTZeahMKNZVHPz9hE" },
 
   { id:"2020-bfm-59", title:"Дедлайны", author:"Саша Воробьёва" },
 
-  { id:"2020-bfm-60", title:"Для семейного просмотра", author:"Полина Вислова" },
+  { id:"2020-bfm-60", title:"Для семейного просмотра", author:"Полина Вислова", videoId:"x6YgPjfu2wyfA8qMfR2uzK" },
 
   { id:"2020-bfm-61", title:"Смотрите дождь", author:"Филипп Вялухин" },
 
@@ -1638,15 +1637,15 @@ const FILMS = [
 
   { id:"2020-bfm-65", title:"Following shadow", author:"Fukumi Nakazawa" },
 
-  { id:"2020-bfm-66", title:"Они забыли про свидание под фонарём", author:"Дарья Стецуняк" },
+  { id:"2020-bfm-66", title:"Они забыли про свидание под фонарём", author:"Дарья Стецуняк", videoId:"n2eU9HN98oxM3kBvdFGURp" },
 
   { id:"2020-bfm-67", title:"Осторожней", author:"Аня Абрамова" },
 
   { id:"2020-bfm-68", title:"Встреча", author:"Дина Малинина" },
 
-  { id:"2020-bfm-69", title:"Зеркальный монстр хочет подружиться", author:"Дарья Болотникова" },
+  { id:"2020-bfm-69", title:"Зеркальный монстр хочет подружиться", author:"Дарья Болотникова", videoId:"ukRYxaTLgyw5C2KeEAbmGF" },
 
-  { id:"2020-bfm-70", title:"Тараканья любовь", author:"Дарья Болотникова" },
+  { id:"2020-bfm-70", title:"Тараканья любовь", author:"Дарья Болотникова", videoId:"6fDNmE9S5jwhJ8jt8mrj61" },
 
   { id:"2020-bfm-71", title:"Рефлексия", author:"Мария Клюева" },
 
@@ -1666,7 +1665,7 @@ const FILMS = [
 
   { id:"2020-bfm-79", title:"Чижик", author:"Бахурин Андрей" },
 
-  { id:"2020-bfm-80", title:"5 сек", author:"Катя Ермакова" },
+  { id:"2020-bfm-80", title:"5 сек", author:"Катя Ермакова", videoId:"m9UMUBC8dvWEmbVs1spKZs" },
 
   { id:"2020-bfm-81", title:"Муха Петрелиус", author:"Даня Мазур" },
 
@@ -1684,7 +1683,7 @@ const FILMS = [
 
   { id:"2020-bfm-88", title:"Дождь Rain", author:"Миша Ширяев" },
 
-  { id:"2020-bfm-89", title:"Вечная любовь", author:"Вадим" },
+  { id:"2020-bfm-89", title:"Вечная любовь", author:"Вадим", videoId:"0NWrq7Je7cdzEzWyhfqCPA" },
 
   { id:"2020-bfm-90", title:"Аррива", author:"Ольга Скво" },
 
@@ -1744,7 +1743,7 @@ const FILMS = [
 
   { id:"2020-bfm-118", title:"Третий - тюбик", author:"Саша Деева" },
 
-  { id:"2020-bfm-119", title:"Метро", author:"Соня Кузина" },
+  { id:"2020-bfm-119", title:"Метро", author:"Соня Кузина", videoId:"9Hc7x9us1ixMEAn3zrR4K2" },
 
   { id:"2020-bfm-120", title:"Птицы", author:"Евген" },
 
@@ -1804,11 +1803,11 @@ const FILMS = [
 
   { id:"2020-bfm-148", title:"Осадки", author:"Анна Есина" },
 
-  { id:"2020-bfm-149", title:"Искусство", author:"Софья Свиридова" },
+  { id:"2020-bfm-149", title:"Искусство", author:"Софья Свиридова", videoId:"7XVR7JgDbMLwYdm1pahxoC" },
 
   { id:"2020-bfm-150", title:"Успех", author:"Валерия Капинос" },
 
-  { id:"2020-bfm-151", title:"Цветение", author:"Баталова Анастасия" },
+  { id:"2020-bfm-151", title:"Цветение", author:"Баталова Анастасия", videoId:"kcqaibnNXiopovjwFxXxqj" },
 
   { id:"2020-bfm-152", title:"Курение убивает - Мишка", author:"Антон Иванов" },
 
@@ -1818,11 +1817,11 @@ const FILMS = [
 
   { id:"2020-bfm-155", title:"Будьте здоровы", author:"Дмитрий Запевалов" },
 
-  { id:"2020-bfm-156", title:"Приёмный", author:"Анна Щукина" },
+  { id:"2020-bfm-156", title:"Приёмный", author:"Анна Щукина", videoId:"bGhAf7G4Wxeeob3VmRvjBw" },
 
-  { id:"2020-bfm-157", title:"Смерть Олега", author:"Анна Щукина" },
+  { id:"2020-bfm-157", title:"Смерть Олега", author:"Анна Щукина", videoId:"загuioaZ3v7brSvCu6goFxGkS" },
 
-  { id:"2020-bfm-158", title:"Огонь", author:"Анна Щукина" },
+  { id:"2020-bfm-158", title:"Огонь", author:"Анна Щукина", videoId:"a5TjDYTvKPQn1XSS3NhTK7" },
 
   { id:"2020-bfm-159", title:"Новая жизнь", author:"Ольга Молоток" },
 
@@ -1926,7 +1925,7 @@ const FILMS = [
 
   { id:"2020-bfm-209", title:"ужин", author:"Дарья Реброва" },
 
-  { id:"2020-bfm-210", title:"Лягушка и мушка", author:"Марья Курочкина" },
+  { id:"2020-bfm-210", title:"Лягушка и мушка", author:"Марья Курочкина", videoId:"33nMcnmjUvzaVnqyBnJrpE" },
 
   { id:"2020-bfm-211", title:"Садко Sadko", author:"Лена Фирсова" },
 
@@ -1968,7 +1967,7 @@ const FILMS = [
 
   { id:"2021-suzdal-1", title:"Хто я", author:"Валерия Гаврилова", city:"Москва" },
 
-  { id:"2021-suzdal-2", title:"Режь!", author:"Валерия Гаврилова", city:"Москва" },
+  { id:"2021-suzdal-2", title:"Режь!", author:"Валерия Гаврилова", city:"Москва", videoId:"tnBYKYjpXmbcmB4hWgmqez" },
 
   { id:"2021-suzdal-3", title:"I missed you, Fuji", author:"Наталья Рысс", city:"Haifa, Israel" },
 
@@ -2004,7 +2003,7 @@ const FILMS = [
 
   { id:"2021-suzdal-19", title:"Фонарики", author:"Наталья Рысс", city:"Хайфа, Израиль" },
 
-  { id:"2021-suzdal-20", title:"Музыкальные монстрики", author:"Антон Иванов", city:"Санкт-Петербург" },
+  { id:"2021-suzdal-20", title:"Музыкальные монстрики", author:"Антон Иванов", city:"Санкт-Петербург", videoId:"pXb1Sfi2FMZpnZQcdNWq15" },
 
   { id:"2021-suzdal-21", title:"Клоун", author:"Анна Ермолинская", city:"Genoa, Italy" },
 
@@ -2022,7 +2021,7 @@ const FILMS = [
 
   { id:"2021-suzdal-28", title:"Вжух", author:"Наталья Спивак", city:"Tbilisi, Georgia" },
 
-  { id:"2021-suzdal-29", title:"мир внутри нас", author:"Федорова Евгения", city:"Санкт-Петербург" },
+  { id:"2021-suzdal-29", title:"мир внутри нас", author:"Федорова Евгения", city:"Санкт-Петербург", videoId:"xaEvKZnMkdXoSvjXdgLsN9" },
 
   { id:"2021-suzdal-30", title:"Поезд-предатель", author:"Иван Максимов", city:"Москва" },
 
@@ -2034,7 +2033,7 @@ const FILMS = [
 
   { id:"2021-suzdal-34", title:"Стокгольм 67 бит", author:"Анна Ермолинская", city:"Genoa, Italy" },
 
-  { id:"2021-suzdal-35", title:"Я не люблю дождь", author:"Антон Иванов", city:"Санкт-Петербург" },
+  { id:"2021-suzdal-35", title:"Я не люблю дождь", author:"Антон Иванов", city:"Санкт-Петербург", videoId:"3DNFZZuEZUn4Pd7EF82t9p" },
 
   { id:"2021-suzdal-36", title:"Новая рыба", author:"Полина Кузина", city:"Тюмень" },
 
@@ -2072,7 +2071,7 @@ const FILMS = [
 
   { id:"2021-suzdal-53", title:"Уборка", author:"Полина Кузина", city:"Тюмень" },
 
-  { id:"2021-suzdal-54", title:"Джеки - повелитель погоды", author:"Антон Иванов", city:"Санкт-Петербург" },
+  { id:"2021-suzdal-54", title:"Джеки - повелитель погоды", author:"Антон Иванов", city:"Санкт-Петербург", videoId:"agFyJxDLWPb3YHBwgu4Yr6" },
 
   { id:"2021-suzdal-55", title:"в любви", author:"Елизавета Турхан", city:"Санкт-Петербург" },
 
@@ -2098,7 +2097,7 @@ const FILMS = [
 
   { id:"2021-suzdal-66", title:"Дарья Стецуняк ƒull inside", author:"asya wilson", city:"Москва" },
 
-  { id:"2021-suzdal-67", title:"Вригрь", author:"Наташа Лаевская", city:"Санкт-Петербург" },
+  { id:"2021-suzdal-67", title:"Вригрь", author:"Наташа Лаевская", city:"Санкт-Петербург", videoId:"rbAUaP5uEZ9H8iyidnihCU" },
 
   { id:"2021-suzdal-68", title:"Цветок из тюбика", author:"Аня Васильева", city:"Санкт-Петербург" },
 
@@ -2156,7 +2155,7 @@ const FILMS = [
 
   { id:"2021-suzdal-95", title:"Дракон", author:"Габдуллина Эмилия", city:"Альметьевск" },
 
-  { id:"2021-suzdal-96", title:"Солнце село", author:"Екатерина Елсукова", city:"Москва" },
+  { id:"2021-suzdal-96", title:"Солнце село", author:"Екатерина Елсукова", city:"Москва", videoId:"dgt6aguX98DzKNVK41STZS" },
 
   { id:"2021-suzdal-97", title:"Жизнь на максималках", author:"asya wilson", city:"Москва" },
 
@@ -2164,7 +2163,7 @@ const FILMS = [
 
   { id:"2021-suzdal-99", title:"Сон", author:"Егор Б", city:"Tallinn, Estonia" },
 
-  { id:"2021-suzdal-100", title:"Полёт", author:"Гедзун Ксения", city:"Москва" },
+  { id:"2021-suzdal-100", title:"Полёт", author:"Гедзун Ксения", city:"Москва", videoId:"nSCDY1inQQgNzU4maU66eh" },
 
   { id:"2021-suzdal-101", title:"КИСЯ", author:"Анастасия Чернышева", city:"Краснознаменск" },
 
@@ -2216,7 +2215,7 @@ const FILMS = [
 
   { id:"2021-suzdal-125", title:"Покупка", author:"Анна Диал", city:"Москва" },
 
-  { id:"2021-suzdal-126", title:"Снегоуборщики", author:"Никита Мещеряков", city:"Москва" },
+  { id:"2021-suzdal-126", title:"Снегоуборщики", author:"Никита Мещеряков", city:"Москва", videoId:"65nbaHWiyyWuTZjbY6TpYM" },
 
   { id:"2021-suzdal-127", title:"Голубец", author:"Мария Фашмухова", city:"Мытищи" },
 
@@ -2328,7 +2327,7 @@ const FILMS = [
 
   { id:"2021-suzdal-181", title:"Варя Абакумова Casting the Runes", author:"Tom Storey", city:"Berlin, Germany" },
 
-  { id:"2021-suzdal-182", title:"Масленица", author:"Макс Куликов", city:"Екатеринбург" },
+  { id:"2021-suzdal-182", title:"Масленица", author:"Макс Куликов", city:"Екатеринбург", videoId:"a9kSpk9RVKHRQsn8KoqVvn" },
 
   { id:"2021-suzdal-183", title:"Муки композитора", author:"Алиса Ра", city:"пгт Шушенское" },
 
@@ -2360,7 +2359,7 @@ const FILMS = [
 
   { id:"2021-suzdal-197", title:"Скамейка", author:"Всеволод Чернецов", city:"Москва" },
 
-  { id:"2021-suzdal-198", title:"Добро пожаловать в Клабхаус", author:"Кристина Янчицкая", city:"Москва" },
+  { id:"2021-suzdal-198", title:"Добро пожаловать в Клабхаус", author:"Кристина Янчицкая", city:"Москва", videoId:"iKykkyTnZrnyK3F4z1gQtu" },
 
   { id:"2021-suzdal-199", title:"Бонк", author:"Вася Зарницына", city:"Челябинск" },
 
@@ -2392,13 +2391,13 @@ const FILMS = [
 
   { id:"2021-suzdal-213", title:"Йог - Паук", author:"Нациевская Наталья", city:"Москва" },
 
-  { id:"2021-suzdal-214", title:"Любовь наперегонки", author:"Вася", city:"Москва" },
+  { id:"2021-suzdal-214", title:"Любовь наперегонки", author:"Вася", city:"Москва", videoId:"tunppijXV3fGBQYuGujn7w" },
 
   { id:"2021-suzdal-215", title:"Месть", author:"Анастасия Рыба", city:"Tallinn, Estonia" },
 
   { id:"2021-suzdal-216", title:"Кот в лаборатории", author:"Маша Зефиркина", city:"Челябинск" },
 
-  { id:"2021-suzdal-217", title:"Неуверенный в себе Анатолий", author:"Саша Деева", city:"Москва" },
+  { id:"2021-suzdal-217", title:"Неуверенный в себе Анатолий", author:"Саша Деева", city:"Москва", videoId:"noRKMLH3AEsc2ywpGGUaQR" },
 
   { id:"2021-suzdal-218", title:"ноздря", author:"Клепарская Арина", city:"Москва" },
 
@@ -2614,7 +2613,7 @@ const FILMS = [
 
   { id:"2021-insmn-90", title:"ЗНАК", author:"Екатерина", city:"Киров" },
 
-  { id:"2021-insmn-91", title:"Безлуние", author:"Рязанова Анастасия", city:"Пермь" },
+  { id:"2021-insmn-91", title:"Безлуние", author:"Рязанова Анастасия", city:"Пермь", videoId:"r1Xhz49iNc4EWZZWVYrUE2" },
 
   { id:"2021-insmn-92", title:"Just A Joke", author:"Petra Balekić", city:"Zagreb, Croatia" },
 
@@ -2630,7 +2629,7 @@ const FILMS = [
 
   { id:"2021-insmn-98", title:"Рыжий парень", author:"Мелания Агекян", city:"Limasol, Cyprus" },
 
-  { id:"2021-insmn-99", title:"Не могу уснуть", author:"Матвиенко Анастасия", city:"Холмск" },
+  { id:"2021-insmn-99", title:"Не могу уснуть", author:"Матвиенко Анастасия", city:"Холмск", videoId:"sCUgmrRcmANaV4pEkZw57x" },
 
   { id:"2021-insmn-100", title:"Любовь это...", author:"Павлик Лазеев", city:"Тула" },
 
@@ -2678,7 +2677,7 @@ const FILMS = [
 
   { id:"2021-insmn-122", title:"Зуб", author:"Женя Фадеев", city:"Москва" },
 
-  { id:"2021-insmn-123", title:"плюхдт", author:"Наташа Лаевская", city:"Санкт-Петербург" },
+  { id:"2021-insmn-123", title:"плюхдт", author:"Наташа Лаевская", city:"Санкт-Петербург", videoId:"wghaZvh4xkjB6mASVK25G6" },
 
   { id:"2021-insmn-124", title:"Жара 1", author:"Наташа Воротникова", city:"Санкт-Петербург" },
 
@@ -2702,7 +2701,7 @@ const FILMS = [
 
   { id:"2021-insmn-134", title:"Кошмар", author:"Ульяна Каленбет", city:"Зеленоград" },
 
-  { id:"2021-insmn-135", title:"Реквием по Идеальной Грустной Мечте", author:"Элина Климова", city:"Москва" },
+  { id:"2021-insmn-135", title:"Реквием по Идеальной Грустной Мечте", author:"Элина Климова", city:"Москва", videoId:"xr7nBcxhg4n8cU2L6Lz36m" },
 
   { id:"2021-insmn-136", title:"Жара", author:"Чистякова Алина", city:"Касимов" },
 
@@ -2860,7 +2859,7 @@ const FILMS = [
 
   { id:"2021-bfm-55", title:"Завтрак", author:"Настя Тен", city:"Vancouver BC, Canada" },
 
-  { id:"2021-bfm-56", title:"Ковер", author:"Дашка Дементьева", city:"Tallinn, Estonia" },
+  { id:"2021-bfm-56", title:"Ковер", author:"Дашка Дементьева", city:"Tallinn, Estonia", videoId:"avYK1usnAvydHQxAqMPx9c" },
 
   { id:"2021-bfm-57", title:"Картоха", author:"Екатерина Костинская", city:"Москва" },
 
@@ -3010,7 +3009,7 @@ const FILMS = [
 
   { id:"2021-bfm-130", title:"Загадка", author:"Феня Андрюшкина, Ашот Мефодин", city:"Тула" },
 
-  { id:"2021-bfm-131", title:"Babushki", author:"Поля Шустова", city:"Москва" },
+  { id:"2021-bfm-131", title:"Babushki", author:"Поля Шустова", city:"Москва", videoId:"6Weu2R9EWzAxXsjXyf4Ni5" },
 
   { id:"2021-bfm-132", title:"БУЛЬ", author:"Сильвия Багдасарян", city:"Верхняя Пышма" },
 
@@ -3038,7 +3037,7 @@ const FILMS = [
 
   { id:"2021-bfm-144", title:"Флорист", author:"Андрей Золотухин", city:"Zürich, Switzerland" },
 
-  { id:"2021-bfm-145", title:"Кредит одобрен 1", author:"Владимир Муртазин", city:"Казань" },
+  { id:"2021-bfm-145", title:"Кредит одобрен 1", author:"Владимир Муртазин", city:"Казань", videoId:"51qiwBTmBoKUGGzXPno2RM" },
 
   { id:"2021-bfm-146", title:"Я вижу тебя", author:"Каминская Кристина", city:"Tashkent, Uzbekistan" },
 
@@ -3048,7 +3047,7 @@ const FILMS = [
 
   { id:"2021-bfm-149", title:"Русский бейсбол", author:"Нелли Ильясова", city:"Montreal, Canada" },
 
-  { id:"2021-bfm-150", title:"Кредит одобрен 2", author:"Владимир Муртазин", city:"Казань" },
+  { id:"2021-bfm-150", title:"Кредит одобрен 2", author:"Владимир Муртазин", city:"Казань", videoId:"n8aJw3xCT7fSiSec5iF8ot" },
 
   { id:"2021-bfm-151", title:"Рука Гарри Поттера", author:"Андрей Золотухин", city:"Zürich, Switzerland" },
 
@@ -3060,7 +3059,7 @@ const FILMS = [
 
   { id:"2021-bfm-155", title:"Как путешествовать на самоизоляции", author:"Андрей Золотухин", city:"Zürich, Switzerland" },
 
-  { id:"2021-bfm-156", title:"Кредит одобрен 3", author:"Vladimir Murtazin", city:"Казань" },
+  { id:"2021-bfm-156", title:"Кредит одобрен 3", author:"Владимир Муртазин", city:"Казань", videoId:"i9HrZuVnDPjhVegDHKnvbM" },
 
   { id:"2021-bfm-157", title:"Мяч", author:"Алина Цимбаревич", city:"Санкт-Петербург" },
 
@@ -3150,7 +3149,7 @@ const FILMS = [
 
   { id:"2021-bfm-200", title:"Яичница", author:"Смык Аня", city:"Екатеринбург" },
 
-  { id:"2021-bfm-201", title:"Окно", author:"Федорова Евгения", city:"Санкт-Петербург" },
+  { id:"2021-bfm-201", title:"Окно", author:"Федорова Евгения", city:"Санкт-Петербург", videoId:"8kq6ZRMjKpoC3riibDF2QZ" },
 
   { id:"2021-bfm-202", title:"Пачиска", author:"Наташа Лаевская", city:"Санкт-Петербург" },
 
@@ -3180,7 +3179,7 @@ const FILMS = [
 
   { id:"2021-bfm-215", title:"вселення", author:"Анна Мальцева", city:"Москва" },
 
-  { id:"2021-bfm-216", title:"....", author:"Алиса Денисова Женя Сушков", city:"Москва" },
+  { id:"2021-bfm-216", title:"....", author:"Алиса Денисова Женя Сушков", city:"Москва", videoId:"fD3BMfU4LF1kfFgdATNXwV" },
 
   { id:"2021-bfm-217", title:"////", author:"Женя Сушков", city:"Москва" },
 
@@ -3294,7 +3293,7 @@ const FILMS = [
 
   { id:"2021-bfm-272", title:"Ускользнула", author:"Анастасия Бородина", city:"Москва" },
 
-  { id:"2021-bfm-273", title:"Поиск работы", author:"Юля Мочалина", city:"Москва" },
+  { id:"2021-bfm-273", title:"Поиск работы", author:"Юля Мочалина", city:"Москва", videoId:"eqVZ29znXqYKPXAE6hUT3A" },
 
   { id:"2021-bfm-274", title:"МАСКА", author:"Аня Достоевская", city:"Санкт-Петербург" },
 
