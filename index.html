@@ -165,7 +165,6 @@
   }
   .home-intro p{color:#d9d9c8;}
 
-  /* ---- Настройки страницы «Поток» ---- */
   .stream-settings{
     display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-start;
     gap:12px; max-width:640px; margin:0 auto 22px;
@@ -267,7 +266,6 @@
     .social-with-image img.banner{max-width:100%;}
   }
 
-  /* Globe / author-page button (используется в таблице фильмов) */
   .globe-btn{
     display:inline-flex; align-items:center; justify-content:center;
     width:34px; height:34px; border-radius:50%;
@@ -277,7 +275,6 @@
   .globe-btn img{width:18px; height:18px; object-fit:contain;}
   .globe-btn:hover{background:rgba(243,162,69,.28);}
 
-  /* ================= CONTENT / ABOUT / ADD ================= */
   .content-block{
     display:grid; grid-template-columns:1.1fr .9fr; gap:10px; align-items:center;
     margin-top:8px;
@@ -339,10 +336,8 @@
     display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
   }
 
-  /* ---- Ползунок диапазона показов ---- */
   .show-slider{
     margin-bottom:22px;
-    /* сверху — под год, снизу — под название показа */
     padding-top:38px;
     padding-bottom:28px;
   }
@@ -386,11 +381,9 @@
   @media (max-width:640px){
     .search-with-filter{width:100%; flex-direction:column; align-items:center; gap:10px;}
     .table-search{width:100%;}
-    /* На iOS инпут с font-size меньше 16px вызывает автозум при фокусе — держим 16px */
     .table-search input{font-size:16px;}
     .ssl-year-label{font-size:.92rem;}
     .ssl-show-label{font-size:.66rem;}
-    /* Дополнительный запас по бокам, чтобы плавающие подписи не упирались в край экрана */
     .show-slider{padding-left:16px; padding-right:16px;}
   }
 
@@ -421,14 +414,12 @@
   }
   td.muted{color:#8b8b82;}
 
-  /* Фиксированные ширины колонок — не "прыгают" при поиске/фильтрации */
   th.col-title, td.col-title{width:38%;}
   th.col-author, td.col-author{width:20%;}
   th.col-city, td.col-city{width:18%;}
   th.col-year, td.col-year{width:18%;}
   th.col-globe, td.col-globe{width:6%; text-align:center;}
 
-  /* "Год показа" обрезается многоточием по ширине колонки, как заголовок таблицы */
   td.col-year{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 
   .badge-18{
@@ -436,23 +427,18 @@
     vertical-align:middle; margin-left:6px; position:relative; top:-2px;
   }
 
-  /* Город и Год показа освобождают место пошире, чем ссылка на автора */
   @media (max-width:700px){
     .col-city, .col-year{display:none;}
     th.col-title, td.col-title{width:62%;}
     th.col-author, td.col-author{width:32%;}
   }
 
-  /* На маленьком экране прячем и ссылку на автора; таблица (и сортировка
-     по Названию/Автору) остаётся */
   @media (max-width:640px){
     .col-globe{display:none;}
     th.col-title, td.col-title{width:60%;}
     th.col-author, td.col-author{width:40%;}
     table.films-table{
       border-radius:0;
-      /* Полноширинная таблица независимо от контента: table-layout:fixed требует
-         ЗАДАННОЙ ширины, иначе браузер вычисляет её по содержимому и она "скачет" */
       width:100vw;
       margin-left:calc(50% - 50vw);
       margin-right:calc(50% - 50vw);
@@ -505,7 +491,7 @@
   footer.site-footer{
     border-top:2px solid var(--line-2);
     padding:26px 0; margin-top:40px;
-    color:#c9c9bd; font-size:.86rem; text-align:center;
+    color:#c9c9bd; font-size:.86rem; text-align:center; line-height: 1.8;
   }
   footer.site-footer a{color:var(--link); font-weight:700;}
 
@@ -544,7 +530,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <a href="https://arstudio.keenetic.link/tnx5sec/" target="_blank" rel="noopener">Поблагодарить автора</a><br>
+    <a href="https://arstudio.keenetic.link/tnx5sec/" target="_blank" rel="noopener">☕ Поблагодарить автора</a><br>
     Название, логотип и изображения являются собственностью фестиваля «Ща5сек»<br>
     <a href="https://envifood.github.io" target="_blank" rel="noopener">Визуальная СрЕда</a> · 2026
   </div>
@@ -552,7 +538,6 @@
 
 <script>
 
-// Список показов для фильтра на странице «Фильмы». Первый пункт — значение по умолчанию (без фильтрации).
 const SHOWS = [
   "Все показы",
   "2019 БФМ",
@@ -572,7 +557,6 @@ const SHOWS = [
   "2026 Бессонница"
 ];
 
-// Короткие идентификаторы показов для адресной строки (человекочитаемый URL вместо кириллицы)
 const SHOW_SLUGS = {
   "2019 БФМ": "2019-bfm",
   "2020 Суздальфест": "2020-suzdal",
@@ -7861,10 +7845,6 @@ const FILMS = [
   { id:"2026-insmn-194", title:"Catnaps", author:"Саша Фенди" }
 ];
 
-// Показ определяется по id вида "<слаг-показа>-<номер>" (например "2019-bfm-1" →
-// "2019 БФМ"), чтобы не дублировать одну и ту же строку в каждой из тысяч записей
-// базы. Если у фильма уже указан show явно (как у части демо-записей выше) —
-// он в приоритете и не перезаписывается.
 function showFromId(id){
   const m = /^(.+)-\d+$/.exec(id || '');
   const slug = m ? m[1] : '';
@@ -7883,7 +7863,6 @@ function currentRoute(){
   return path.split('/').filter(Boolean);
 }
 
-// Параметры вида #/films?show=...&q=... — фильтр и поиск на странице «Фильмы»
 function currentQueryParams(){
   const hash = location.hash.replace(/^#\/?/, '') || '';
   const qIndex = hash.indexOf('?');
@@ -7926,9 +7905,6 @@ function route(){
   }
 }
 
-// Отдельно отслеживаем предыдущий (не-модальный) адрес, чтобы при закрытии
-// модального окна корректно вернуться на ту же страницу, откуда открыли фильм —
-// независимо от того, что именно поменяло hash (клик по строке, поиск, модалка).
 window.addEventListener('hashchange', (e) => {
   let oldHash = '';
   try{ oldHash = new URL(e.oldURL).hash || ''; } catch(err){}
@@ -7942,7 +7918,6 @@ function esc(str){
 }
 function fact(v, fallback='—'){ return (v === undefined || v === null || v === '') ? fallback : esc(v); }
 
-// Обрезает строку до max символов, добавляя многоточие (для колонок Название/Автор в таблице)
 function truncateText(str, max=40){
   const s = String(str ?? '');
   return s.length > max ? s.slice(0, max) + '…' : s;
@@ -7955,8 +7930,6 @@ function globeButton(film){
     </a>`;
 }
 
-// Строка для подписи к видео: "Имя автора, Город" — ссылка на страницу «Фильмы»
-// с поиском по имени этого автора (внешняя ссылка на автора — в кнопке справа)
 function authorLine(film){
   const nameHtml = `<a href="#/films?q=${encodeURIComponent(film.author)}">${esc(film.author)}</a>`;
   const parts = [nameHtml];
@@ -7964,12 +7937,10 @@ function authorLine(film){
   return parts.join(', ');
 }
 
-// Иконка 18+ рядом с названием, если у фильма стоит adult:true
 function adultBadge(film){
   return film.adult ? ` <img class="badge-18" src="assets/icon-18.png" alt="18+" title="18+">` : '';
 }
 
-// Подпись к видео (заголовок, автор, показ) — единая разметка для главной и модального окна
 function filmInfoBlock(film, id){
   return `
     <div class="modal-info"${id ? ` id="${id}"` : ''}>
@@ -7986,7 +7957,6 @@ function filmInfoBlock(film, id){
     </div>`;
 }
 
-// Кнопка "Автор" — внешняя ссылка на страницу автора (если она указана в базе)
 function authorExternalLink(film){
   if(!film.authorUrl) return '';
   return `<a class="icon-action" href="${esc(film.authorUrl)}" target="_blank" rel="noopener" title="Страница автора" aria-label="Страница автора">
@@ -7994,7 +7964,6 @@ function authorExternalLink(film){
   </a>`;
 }
 
-// Кнопка "Поделиться" — прямая ссылка на этот фильм (открывается модальным окном)
 function shareLink(film){
   const url = `${location.origin}${location.pathname}#/film/${encodeURIComponent(film.id)}`;
   return `<a class="icon-action share-action" href="${esc(url)}" target="_blank" rel="noopener"
@@ -8004,15 +7973,12 @@ function shareLink(film){
   </a>`;
 }
 
-// Кнопка "Нашли ошибку?" — ведёт на бота в Telegram с id текущего фильма
 function reportLink(film){
   return `<a class="icon-action" href="https://t.me/scha5sekbot?start=${encodeURIComponent(film.id)}" target="_blank" rel="noopener" title="Нашли ошибку?" aria-label="Сообщить об ошибке в фильме «${esc(film.title)}»">
     <img src="assets/icon-report.png" alt="">
   </a>`;
 }
 
-// Ссылка "Год показа" — ведёт на страницу «Фильмы» с ползунком, выставленным
-// точно на этот показ (from и to — один и тот же слаг)
 function showFilterLink(film){
   const slug = SHOW_SLUGS[film.show];
   if(!slug) return esc(film.show);
@@ -8092,24 +8058,11 @@ function renderHome(){
 }
 
 /* ================= ПОТОК ================= */
-// Бесконечный поток всех фильмов в случайном порядке без повторов; когда база
-// заканчивается — перемешивается заново и продолжает показ по кругу. Повтор у
-// видео отключён (playerBlock(film, false)), иначе короткие ролики начинали бы
-// проигрываться заново перед самым переключением.
-//
-// Каждому фильму нужно показываться ровно 7 полных секунд, но таймер запускается
-// в момент вставки iframe, а не в момент, когда плеер Kinescope реально начинает
-// воспроизведение — на загрузку и старт плеера уходит какое-то время, и это время
-// "съедало" часть из 7 секунд показа. STREAM_LOAD_BUFFER_MS компенсирует эту
-// задержку, добавляя её сверху к времени показа.
 const STREAM_FILM_SECONDS = 7000;
 const STREAM_LOAD_BUFFER_MS = 2500;
 let streamQueue = [];
 let streamIndex = 0;
 let streamTimer = null;
-// Настройки потока: какие показы участвуют и в каком порядке — по умолчанию
-// все показы и случайный порядок. Сбрасываются на дефолт при каждом новом
-// заходе на страницу (см. начало renderStream).
 let streamSelectedShows = new Set(SHOW_TIMELINE);
 let streamOrderMode = 'shuffle'; // 'shuffle' | 'sequential'
 let streamIncludeAdult = false;
@@ -8173,9 +8126,6 @@ function advanceStream(){
   renderStreamPlayerArea();
 }
 
-// Обновляет только видео и подпись — вызывается и при первом заходе, и на каждое
-// автоматическое переключение. Панель настроек при этом не перерисовывается,
-// иначе она бы "мигала" и закрывалась каждые несколько секунд.
 function renderStreamPlayerArea(){
   const area = document.getElementById('streamPlayerArea');
   if(!area) return; // пользователь уже ушёл со страницы
@@ -8263,7 +8213,7 @@ function renderStream(){
   mainEl.innerHTML = `
     <section class="hero wrap">
       <div class="home-intro">
-        <p>Бесконечный поток 5секов, который можно настроить по своему желанию. Приятного просмотра!</p>
+        <p>Бесконечный поток 5секов с настройками. Приятного просмотра!</p>
       </div>
 
       <div class="stream-settings">
@@ -8310,7 +8260,6 @@ function renderStream(){
 }
 
 /* ================= СОЦСЕТИ ================= */
-// Строки соцсетей — используются на главной странице
 function socialLinksBlock(){
   return `
     <div class="social-links">
@@ -8335,9 +8284,8 @@ function renderAdd(){
   mainEl.innerHTML = `
     <section class="page-section wrap">
       <div class="form-card">
-        <!-- Замените src на ссылку своей Google Формы с параметром ?embedded=true -->
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeNbUGJ7Zef_IbOR8j9S_Y6feaAsn-g8r5bIkkaxopGj5YVCQ/viewform?embedded=true"
-          title="Форма подачи фильма на фестиваль">Загрузка формы…</iframe>
+          title="Форма добавления фильма на сайт">Загрузка формы…</iframe>
       </div>
     </section>
   `;
@@ -8368,8 +8316,6 @@ function filterFilms(list, query){
   );
 }
 
-// Оставляет только фильмы, чей показ попадает в выбранный диапазон ползунка
-// (полный диапазон от начала до конца шкалы — без фильтрации)
 function filterByShowRange(list, lowIdx, highIdx){
   if(lowIdx <= 0 && highIdx >= SHOW_TIMELINE.length - 1) return list;
   return list.filter(f => {
@@ -8378,14 +8324,11 @@ function filterByShowRange(list, lowIdx, highIdx){
   });
 }
 
-// Разбивает "2025 Бессонница" на ["2025", "Бессонница"] для подписей на концах ползунка
 function splitShow(show){
   const spaceIdx = show.indexOf(' ');
   return spaceIdx === -1 ? [show, ''] : [show.slice(0, spaceIdx), show.slice(spaceIdx + 1)];
 }
 
-// Отражает текущий поиск/диапазон показов в адресной строке (без добавления записей
-// в историю и без перерисовки страницы), чтобы ссылку можно было скопировать и переслать.
 function updateFilmsQueryInUrl(){
   const params = new URLSearchParams();
   if(sliderLowIdx > 0) params.set('from', SHOW_SLUGS[SHOW_TIMELINE[sliderLowIdx]]);
@@ -8493,7 +8436,6 @@ function renderFilmsPage(){
   bindThumbDrag(document.getElementById('thumbHigh'), false);
 }
 
-// Индекс шкалы показов по X-координате указателя внутри трека ползунка
 function sliderIdxFromClientX(clientX){
   const wrap = document.querySelector('.show-slider-track-wrap');
   if(!wrap) return 0;
@@ -8502,9 +8444,6 @@ function sliderIdxFromClientX(clientX){
   return Math.round(ratio * (SHOW_TIMELINE.length - 1));
 }
 
-// Кастомный (не нативный <input type=range>) бегунок — перетаскивание через Pointer Events
-// и управление стрелками с клавиатуры. Нативная пара range-инпутов, наложенных друг на друга,
-// на некоторых устройствах "залипала" на краях шкалы — с кастомными бегунками этой проблемы нет.
 function bindThumbDrag(thumbEl, isLow){
   const last = SHOW_TIMELINE.length - 1;
 
@@ -8549,18 +8488,11 @@ function bindThumbDrag(thumbEl, isLow){
   });
 }
 
-// Считает точки "рядом", если расстояние между ними меньше ~15% ширины шкалы —
-// при таком сближении подписи начинают перекрывать друг друга
 function isCloseRange(lowIdx, highIdx, last){
   if(lowIdx === highIdx) return false; // при полном совпадении левая подпись просто скрыта
   return (highIdx - lowIdx) <= Math.max(1, last * 0.15);
 }
 
-// Горизонтальный якорь подписи относительно точки:
-// - по умолчанию — по центру;
-// - если точка на краю шкалы — разворачивается внутрь, чтобы не выйти за пределы экрана;
-// - если точки рядом друг с другом — расходятся в стороны (левая подпись влево,
-//   правая вправо), чтобы не перекрывать друг друга. Край шкалы в приоритете над "рядом".
 function sliderAnchorX(idx, last, isLow, isClose){
   if(isLow){
     if(idx <= 0) return 'calc(0% + 6px)';
@@ -8572,19 +8504,15 @@ function sliderAnchorX(idx, last, isLow, isClose){
   return '-50%';
 }
 
-// Отдаёт "верхнему" бегунку приоритет по клику, чтобы ползунок не "залипал",
-// когда обе точки совпадают на краю шкалы (иначе клик всегда достаётся другому бегунку)
 function updateSliderZIndex(){
   const thumbLow = document.getElementById('thumbLow');
   const thumbHigh = document.getElementById('thumbHigh');
   if(!thumbLow || !thumbHigh) return;
   const last = SHOW_TIMELINE.length - 1;
   if(sliderLowIdx === sliderHighIdx && sliderHighIdx >= last){
-    // обе точки в самом конце шкалы — приоритет левой, чтобы её можно было увести влево
     thumbLow.style.zIndex = 3;
     thumbHigh.style.zIndex = 2;
   } else if(sliderLowIdx === sliderHighIdx && sliderLowIdx <= 0){
-    // обе точки в самом начале шкалы — приоритет правой, чтобы её можно было увести вправо
     thumbLow.style.zIndex = 2;
     thumbHigh.style.zIndex = 3;
   } else {
@@ -8593,7 +8521,6 @@ function updateSliderZIndex(){
   }
 }
 
-// Обновляет положение бегунков, заливки и плавающих подписей ползунка показов
 function updateSliderUI(){
   const last = SHOW_TIMELINE.length - 1;
   const pct = i => (i / last) * 100;
@@ -8622,7 +8549,6 @@ function updateSliderUI(){
   const toYearEl = document.getElementById('sliderToYear');
   const toShowEl = document.getElementById('sliderToShow');
 
-  // Если выбран один показ — левая подпись не нужна (дублировала бы правую)
   if(fromYearEl) fromYearEl.style.display = sameShow ? 'none' : '';
   if(fromShowEl) fromShowEl.style.display = sameShow ? 'none' : '';
 
@@ -8631,8 +8557,6 @@ function updateSliderUI(){
   const fromLeft = pct(sliderLowIdx) + '%';
   const toLeft = pct(sliderHighIdx) + '%';
 
-  // Год — по центру над точкой; показ — сразу под точкой, ближе к ней
-  // Год — по центру над точкой (сдвинут повыше); показ — под точкой (сдвинут пониже)
   if(fromYearEl){ fromYearEl.style.left = fromLeft; fromYearEl.style.transform = `translate(${fromX}, calc(-50% - 20px))`; }
   if(fromShowEl){ fromShowEl.style.left = fromLeft; fromShowEl.style.transform = `translate(${fromX}, calc(-50% + 20px))`; }
   if(toYearEl){ toYearEl.style.left = toLeft; toYearEl.style.transform = `translate(${toX}, calc(-50% - 20px))`; }
@@ -8674,7 +8598,7 @@ function drawFilmsTable(){
 
   mainEl.querySelectorAll('tr.film-row').forEach(row => {
     row.addEventListener('click', (e) => {
-      if(e.target.closest('.globe-btn')) return; // клик по глобусу не открывает плеер
+      if(e.target.closest('.globe-btn')) return;
       location.hash = `#/film/${row.dataset.id}`;
     });
     row.addEventListener('keydown', (e) => {
@@ -8724,7 +8648,6 @@ document.addEventListener('click', (e) => {
   navigator.share({ title: btn.dataset.shareTitle, url: btn.dataset.shareUrl }).catch(() => {});
 });
 
-// Закрывает выпадающий список показов на странице «Поток» при клике снаружи
 document.addEventListener('click', (e) => {
   const openDetails = document.querySelector('.stream-filter[open]');
   if(openDetails && !openDetails.contains(e.target)){
