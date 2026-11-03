@@ -95,7 +95,7 @@ KNOWN_SLUGS = {
     "2021-suzdal", "2021-insmn", "2021-bfm",
     "2024-suzdal", "2024-insmn", "2024-bfm",
     "2025-suzdal", "2025-insmn", "2025-bfm",
-    "2026-suzdal", "2026-insmn",
+    "2026-suzdal", "2026-insmn", "2026-bfm",
 }
 
 # id вида "<слаг>-<номер>", например "2019-bfm-142" → слаг "2019-bfm"
